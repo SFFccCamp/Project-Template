@@ -12,7 +12,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.users)
     return (
       <div className={styles.App}>
         <header className={styles.header}>
@@ -20,6 +19,9 @@ class App extends Component {
           <div>hello</div>
         </header>
         <p>What's up!</p>
+        <div>
+          {this.state.users.map(user => <div key={user.name}>{user.name}</div>)}
+        </div>
       </div>
     )
   }
