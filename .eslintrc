@@ -1,3 +1,4 @@
+
 {
   "parser": "babel-eslint",
   "ecmaFeatures": {
@@ -12,7 +13,10 @@
   },
   "rules": {
     // "no-unused-vars": 2,
-    "no-undef": 2
+    // "no-undef": 2
   },
-  "parserOptions": { "sourceType": "module", "ecmaFeatures": { "jsx": true } }
+  "parserOptions": { "sourceType": "module", "ecmaFeatures": { "jsx": true } },
+  "plugins": [
+    "react"
+  ]
 }
