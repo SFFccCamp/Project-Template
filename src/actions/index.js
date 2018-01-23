@@ -6,11 +6,11 @@ export function requestData() {
   return dispatch => {
     dispatch(isFetching())
     fetchData().then(data => {
-      if (data.response === 200) {
-        dispatch({ type: REQUEST_DATA, payload: data })
-        dispatch(fetchSuccess())
-      }
-      return dispatch(fetchFailed())
+      dispatch({
+        type: REQUEST_DATA,
+        payload: data
+      }).catch(error => dispatch(fetchFailed()))
+      dispatch(fetchSuccess())
     })
   }
 }

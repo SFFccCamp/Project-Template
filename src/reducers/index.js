@@ -1,4 +1,9 @@
-import { IS_FETCHING, FETCH_FAILED, FETCH_SUCCESS } from '../actions/types'
+import {
+  IS_FETCHING,
+  FETCH_FAILED,
+  FETCH_SUCCESS,
+  REQUEST_DATA
+} from '../actions/types'
 
 const INITIAL_STATE = {
   data: [],
@@ -15,10 +20,10 @@ export default function(state = INITIAL_STATE, action) {
     case FETCH_SUCCESS:
       return { ...state, fecthDataSuccess: action.payload, isFetching: false }
 
-    case FETCH_ERROR:
+    case FETCH_FAILED:
       return { ...state, fetchDataError: action.payload, isFetching: false }
 
-    case DATA:
+    case REQUEST_DATA:
       return { ...state, data: action.payload }
 
     default:
